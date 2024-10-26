@@ -3,25 +3,87 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #e7e4e5;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: auto;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  /* background-color: black; */
 }
-
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  width: 100%;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+.secondary {
+  perspective: 600px;
+}
+
+@media (max-width: 640px) {
+  body {
+    overflow: visible;
+    width: 100vw;
   }
+}
+
+@media (min-width: 641px) and (max-width: 1280px) {
+  body {
+    overflow: visible;
+    width: 100vw;
+  }
+}
+
+@keyframes grain {
+  0%,
+  100% {
+    transform: translate(0);
+  }
+  10% {
+    transform: translate(-5%, -10%);
+  }
+  20% {
+    transform: translate(-15%, 5%);
+  }
+  30% {
+    transform: translate(7%, -25%);
+  }
+  40% {
+    transform: translate(-5%, 25%);
+  }
+  50% {
+    transform: translate(-15%, 10%);
+  }
+  60% {
+    transform: translate(15%);
+  }
+  70% {
+    transform: translateY(15%);
+  }
+  80% {
+    transform: translate(3%, 35%);
+  }
+  90% {
+    transform: translate(-10%, 10%);
+  }
+}
+
+/* Set up the grain animation */
+.noise-overlay {
+  -webkit-animation: grain 8s steps(10) infinite;
+  animation: grain 8s steps(10) infinite;
+  background-image: url(../../public/noise.png);
+  content: "";
+  height: 300%;
+  left: -50%;
+  opacity: 0.25;
+  position: fixed;
+  top: -100%;
+  width: 300%;
+  pointer-events: none;
+  z-index: 9999;
 }
