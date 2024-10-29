@@ -1,12 +1,13 @@
 "use client";
 import React, { useRef } from "react";
-import backgroundImage1 from "../../../public/hero-banner-2.jpg";
+// import backgroundImage1 from "../../../public/hero-banner-2.jpg";
 import Image from "next/image";
 import localFont from "next/font/local";
 const myFont = localFont({ src: "./../../app/fonts/Morganite-Bold.ttf" });
 
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import Carousel from "../AboutPage/Carousal";
 
 function HeroBanner() {
   const heroBannerRef = useRef<HTMLDivElement | null>(null);
@@ -62,10 +63,13 @@ function HeroBanner() {
       </span>
     ));
   return (
-    <div className="relative h-screen w-full" ref={heroBannerRef}>
+    <div
+      className="relative h-screen w-full z-30 bg-hero-pattern bg-cover bg-center bg-no-repeat"
+      ref={heroBannerRef}
+    >
       {/* Text Overlay */}
       <div
-        className={`${myFont.className} absolute top-0 left-0 w-screen h-screen flex flex-col justify-center items-center z-50 p-10  text-[15rem] tracking-wide`}
+        className={`${myFont.className} absolute top-0 left-0 w-screen h-screen flex flex-col justify-center items-center z-40 p-10  text-[15rem] tracking-wide`}
       >
         <div className="overflow-hidden h-fit ">
           <h1 className="text-white banner  m-0 p-0">
@@ -80,7 +84,7 @@ function HeroBanner() {
         <div className="overflow-hidden">
           <h1 className="w-40 banner-cap">
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga,
-            ducimus? 
+            ducimus?
           </h1>
         </div>
         <div className="overflow-hidden">
@@ -89,14 +93,15 @@ function HeroBanner() {
       </div>
 
       {/* Background Image */}
-      <div className="relative w-full h-full">
+
+      {/* <div className="relative w-full h-full ">
         <Image
           src={backgroundImage1}
           layout="fill"
           alt="bg"
           className="w-full h-full object-cover z-20 pointer-events-none"
         />
-      </div>
+      </div> */}
     </div>
   );
 }

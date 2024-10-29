@@ -8,8 +8,8 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 // Import your fonts
-const myFont = localFont({ src: "./../app/fonts/IvyMode-Regular.woff" });
-const secondary = localFont({ src: "./../app/fonts/Luxca.woff" });
+const myFont = localFont({ src: "./../../app/fonts/IvyMode-Regular.woff" });
+const secondary = localFont({ src: "./../../app/fonts/Luxca.woff" });
 
 function ProjectsHeader() {
   const projectHeaderRef = useRef<HTMLDivElement | null>(null);

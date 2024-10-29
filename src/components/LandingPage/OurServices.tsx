@@ -19,11 +19,11 @@ function OurServices() {
   return (
     <section className="w-full min-h-screen flex flex-col justify-around z-20 px-10">
       <div className="flex justify-around items-center w-full h-screen">
-        <div className="flex flex-col items-start justify-around flex-1 xl:p-10 2xl:p-14  h-full border-x border-white/20 ">
+        <div className="flex flex-col items-start justify-around flex-1 md:p-6 xl:p-10 2xl:p-14  h-full border-x border-white/20 ">
           <h1 className={`${sarabun.className} text-8xl `}>
             What <br /> we do?
           </h1>
-          <h1 className={`${myFont.className}  pr-6`}>
+          <h1 className={`${myFont.className}  pr-6 text-white/70`}>
             Founded in 2019, Future Framez Media has quickly become a leader in
             the media industry, delivering end-to-end solutions for movie
             production, advertising, web series, documentaries, and more. Based
@@ -92,9 +92,9 @@ const ContentBlock = ({
   tagline,
 }: ContentBlockProps) => {
   return (
-    <div className="relative flex flex-col items-center justify-center flex-1 xl:p-10 2xl:p-14 h-full border-r border-white/20 overflow-hidden first:border-l">
+    <div className="relative flex flex-col items-center justify-center flex-1 p-6 xl:p-10 2xl:p-14 h-full border-r border-white/20 overflow-hidden first:border-l">
       <h2
-        className={`${nanum.className} xl:text-[25rem] 2xl:text-[30rem] absolute -top-32 -right-16 2xl:-right-20 z-0 opacity-30 number`}
+        className={`${nanum.className} text-[25rem] xl:text-[25rem] 2xl:text-[30rem] absolute -top-32 -right-16 2xl:-right-20 z-0 opacity-30 number`}
       >
         {number}
       </h2>

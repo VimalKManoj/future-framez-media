@@ -2,8 +2,8 @@
 import Image from "next/image";
 import React, { useRef } from "react";
 import localFont from "next/font/local";
-const myFont = localFont({ src: "./../app/fonts/IvyMode-Regular.woff" });
-const secondary = localFont({ src: "./../app/fonts/Luxca.woff" });
+const myFont = localFont({ src: "./../../app/fonts/IvyMode-Regular.woff" });
+const secondary = localFont({ src: "./../../app/fonts/Luxca.woff" });
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import ScrollTrigger from "gsap/ScrollTrigger";

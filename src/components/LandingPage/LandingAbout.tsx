@@ -13,11 +13,10 @@ import backgroundImage3 from "../../../public/bg-3.png";
 import backgroundImage4 from "../../../public/bg-4.png";
 import backgroundImage5 from "../../../public/2.jpg";
 
-
 gsap.registerPlugin(ScrollTrigger);
 
 function LandingAbout() {
-  const heroRef = React.useRef<HTMLDivElement | null>(null);
+  const heroRef = useRef<HTMLDivElement | null>(null);
 
   useGSAP(
     () => {
@@ -79,8 +78,8 @@ function LandingAbout() {
       ref={heroRef}
       className="relative w-screen h-[350vh]  flex flex-col justify-between items-center  "
     >
-      <div className="sticky -top-2 w-screen h-screen flex justify-center items-center flex-col ">
-        <div className="flex justify-center items-center absolute top-0 left-0 w-screen h-screen flex-col  ">
+      <div className="sticky -top-0 w-screen h-screen flex justify-center items-center flex-col ">
+        <div className="flex justify-center items-center absolute top-0 left-0 w-screen h-screen flex-col z-20 ">
           <div className=" w-4/5 text-center overflow-hidden ">
             <h1
               className={`text-6xl mr-20 about-us-cap translate-y-[240%] ${myFont.className} uppercase`}
@@ -99,7 +98,7 @@ function LandingAbout() {
             </h1>
           </div>
         </div>
-        <div className="landing-about-wrapper  absolute top-0 left-0 w-screen h-screen object-cover z-10 opacity-40 overflow-hidden">
+        <div className="landing-about-wrapper  absolute top-0 left-0 w-screen opacity-70 h-screen object-cover z-10 overflow-hidden">
           <div className="absolute top-0 left-0 w-screen h-screen object-cover z-10 overflow-hidden   bg-image">
             <Image
               src={backgroundImage}

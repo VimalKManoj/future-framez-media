@@ -4,7 +4,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import ScrollTrigger from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
-import "./styles.css";
+import "../styles.css";
 import ProjectCardItem from "./ProjectCardItem";
 
 function ProjectCard() {
