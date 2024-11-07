@@ -16,6 +16,7 @@ const config: Config = {
         "hero-gradient":
           "radial-gradient(68.54% 68.72% at 55.02% 31.46%,hsla(0,0%,85%,.08) 0,hsla(0,0%,55%,.02) 50%,hsla(0,0%,45%,0) 80%)",
         "hero-pattern": "url('/hero-banner-2.jpg')",
+        "hero-pattern_vertical": "url('/hero-banner-2_vertical.jpg')",
       },
     },
   },

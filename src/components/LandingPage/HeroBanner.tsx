@@ -1,13 +1,12 @@
 "use client";
 import React, { useRef } from "react";
-// import backgroundImage1 from "../../../public/hero-banner-2.jpg";
-import Image from "next/image";
 import localFont from "next/font/local";
-const myFont = localFont({ src: "./../../app/fonts/Morganite-Bold.ttf" });
-
+const primary = localFont({ src: "./../../app/fonts/Legacy_Sans.woff" });
+const secondary = localFont({
+  src: "./../../app/fonts/BlauerNue-Regular.woff",
+});
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import Carousel from "../AboutPage/Carousal";
 
 function HeroBanner() {
   const heroBannerRef = useRef<HTMLDivElement | null>(null);
@@ -64,46 +63,48 @@ function HeroBanner() {
     ));
   return (
     <div
-      className="relative h-screen w-full z-30 bg-hero-pattern bg-cover bg-center bg-no-repeat"
+      className="relative h-screen w-full z-30 bg-hero-pattern_vertical bg-center  bg-no-repeat flex flex-col  justify-end  items-start p-10 md:p-20 md:h-screen  md:bg-hero-pattern bg-cover md:bg-center md:justify-center xl:p-28"
       ref={heroBannerRef}
     >
-      {/* Text Overlay */}
       <div
-        className={`${myFont.className} absolute top-0 left-0 w-screen h-screen flex flex-col justify-center items-center z-40 p-10  text-[15rem] tracking-wide`}
+        className={`${primary.className}  flex flex-col justify-center items-center text-6xl  z-40 2xl:p-0 md:text-8xl md:w-[70%] 2xl:text-[9rem] tracking-wide`}
       >
         <div className="overflow-hidden h-fit ">
-          <h1 className="text-white banner  m-0 p-0">
+          <h1 className="text-left text-white banner  m-0 p-0  md:text-balance ">
             {" "}
-            {splitText("FUTURE FRAMEZ MEDIA")}
+            {splitText("Your story, our vision")}
           </h1>
         </div>
       </div>
+
       <div
-        className={`${myFont.className} absolute top-0 left-0 w-screen h-screen flex  justify-between items-end z-50 p-10  text-2xl `}
+        className={`${secondary.className} flex pb-20 md:pb-10  justify-between items-end z-50 py-10 md:text-4xl `}
       >
         <div className="overflow-hidden">
-          <h1 className="w-40 banner-cap">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga,
-            ducimus?
+          <h1 className="w-full banner-cap">
+            Future Frames is your one-stop solution{" "}
+            <br className="hidden md:block" /> for all visual storytelling
+            needs.
           </h1>
         </div>
-        <div className="overflow-hidden">
-          <h1 className="text-4xl banner-cap">We define the future</h1>
-        </div>
       </div>
+    </div>
+  );
+}
 
-      {/* Background Image */}
+export default HeroBanner;
 
-      {/* <div className="relative w-full h-full ">
+{
+  /* Background Image */
+}
+
+{
+  /* <div className="relative w-full h-full ">
         <Image
           src={backgroundImage1}
           layout="fill"
           alt="bg"
           className="w-full h-full object-cover z-20 pointer-events-none"
         />
-      </div> */}
-    </div>
-  );
+      </div> */
 }
-
-export default HeroBanner;

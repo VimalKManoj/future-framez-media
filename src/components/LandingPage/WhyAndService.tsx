@@ -64,11 +64,11 @@ function WhyAndService() {
           width={1000}
           height={1000}
           alt="bg"
-          className=" w-full h-full object-cover relative bottom-60 z-0 parallax-img"
+          className=" w-full h-full object-cover relative bottom-60 z-0 parallax-img hidden md:block"
         />
       </div>
 
-      <div className="absolute top-0 left-0 flex flex-col justify-center items-center w-full h-full">
+      <div className="md:absolute top-0 left-0 flex flex-col justify-center items-center w-full h-full">
         <Why />
         <OurServices />
       </div>

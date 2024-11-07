@@ -1,12 +1,9 @@
 import React from "react";
-import { Bebas_Neue, Hanken_Grotesk } from "next/font/google";
+import { Hanken_Grotesk } from "next/font/google";
 import localFont from "next/font/local";
-const myFont = localFont({ src: "./../../app/fonts/Suisse_Intl_Regular.ttf" });
-
-const sarabun = Bebas_Neue({
-  subsets: ["latin"],
-  weight: ["400"],
-  display: "swap",
+const primary = localFont({ src: "./../../app/fonts/Legacy_Sans.woff" });
+const secondary = localFont({
+  src: "./../../app/fonts/BlauerNue-Regular.woff",
 });
 
 const nanum = Hanken_Grotesk({
@@ -17,13 +14,17 @@ const nanum = Hanken_Grotesk({
 
 function OurServices() {
   return (
-    <section className="w-full min-h-screen flex flex-col justify-around z-20 px-10">
-      <div className="flex justify-around items-center w-full h-screen">
-        <div className="flex flex-col items-start justify-around flex-1 md:p-6 xl:p-10 2xl:p-14  h-full border-x border-white/20 ">
-          <h1 className={`${sarabun.className} text-8xl `}>
-            What <br /> we do?
+    <section className="w-full min-h-screen flex flex-col justify-around z-20 px-6 md:px-10 bg-white text-black md:text-inherit md:bg-transparent">
+      <div className="flex flex-col md:flex-row justify-around items-center w-full md:h-screen">
+        <div className="flex flex-col items-start justify-around flex-1 p-6 xl:p-10 2xl:p-14  h-full border-x md:border-white/20  border-black/20 ">
+          <h1
+            className={`${primary.className} text-3xl md:text-6xl 2xl:text-7xl pb-4 md:pb-0 text-center md:text-left w-full`}
+          >
+            What <br className="hidden md:block" /> we do?
           </h1>
-          <h1 className={`${myFont.className}  pr-6 text-white/70`}>
+          <h1
+            className={`${secondary.className} text-center md:text-left md:pr-6 md:text-white/70 mb-4 md:mb-0`}
+          >
             Founded in 2019, Future Framez Media has quickly become a leader in
             the media industry, delivering end-to-end solutions for movie
             production, advertising, web series, documentaries, and more. Based
@@ -32,7 +33,9 @@ function OurServices() {
             strong global network, we bring your vision to life with precision
             and professionalism.
           </h1>
-          <h1 className={`${myFont.className} font-bold  pr-6`}>
+          <h1
+            className={`${secondary.className} font-bold text-center md:text-left md:pr-6`}
+          >
             Let FFM Studio bring your ideas to life with our full-service,
             end-to-end creative solutions. Whatever your vision, we are here to
             make it a reality.
@@ -52,7 +55,7 @@ function OurServices() {
           tagline="Unforgettable Moments, Perfectly Captured"
         />
       </div>
-      <div className="flex justify-around items-center w-full xl:h-[90vh] 2xl:h-screen">
+      <div className="flex flex-col md:flex-row justify-around items-center w-full h-full xl:h-[90vh] 2xl:h-screen">
         <ContentBlock
           number="3"
           title="Corporate Videos"
@@ -92,19 +95,21 @@ const ContentBlock = ({
   tagline,
 }: ContentBlockProps) => {
   return (
-    <div className="relative flex flex-col items-center justify-center flex-1 p-6 xl:p-10 2xl:p-14 h-full border-r border-white/20 overflow-hidden first:border-l">
+    <div className="relative flex flex-col items-center justify-center flex-1 p-10 py-20 md:py-0 md:p-6  xl:p-10 2xl:p-14 h-[50vh] md:h-full border-x md:border-r md:border-white/20 border-black/20  overflow-hidden  md:first:border-l">
       <h2
-        className={`${nanum.className} text-[25rem] xl:text-[25rem] 2xl:text-[30rem] absolute -top-32 -right-16 2xl:-right-20 z-0 opacity-30 number`}
+        className={`${nanum.className} text-[18rem] md:text-[25rem] xl:text-[25rem] 2xl:text-[30rem] absolute -top-32 -right-10 md:-right-16 2xl:-right-20 z-0 opacity-30 number`}
       >
         {number}
       </h2>
-      <div className="w-4/5">
-        <h2 className="${myFont.className} font-semibold xl:text-2xl 2xl:text-3xl my-10">
+      <div className="md:w-4/5">
+        <h2
+          className={`${secondary.className} font-semibold text-2xl 2xl:text-3xl my-10`}
+        >
           {title}
         </h2>
-        <h2 className="${myFont.className} mb-10">{description}</h2>
+        <h2 className={`${secondary.className} mb-10`}>{description}</h2>
       </div>
-      <h2 className="${myFont.className} font-light text-3xl w-4/5">
+      <h2 className={`${secondary.className} font-light text-2xl md:w-4/5`}>
         {tagline}
       </h2>
     </div>

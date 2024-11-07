@@ -5,11 +5,21 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import ScrollTrigger from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(ScrollTrigger);
+const primary = localFont({ src: "./../../app/fonts/Legacy_Sans.woff" });
+const secondary = localFont({
+  src: "./../../app/fonts/BlauerNue-Regular.woff",
+});
 
-// Import your fonts
-const myFont = localFont({ src: "./../../app/fonts/IvyMode-Regular.woff" });
-const secondary = localFont({ src: "./../../app/fonts/Luxca.woff" });
+gsap.registerPlugin(ScrollTrigger);
+import { Bebas_Neue, Hanken_Grotesk } from "next/font/google";
+import { title } from "process";
+import TextMarquee from "../Marquee/TextMarque";
+
+const bebas = Bebas_Neue({
+  subsets: ["latin"],
+  weight: ["400"],
+  display: "swap",
+});
 
 function ProjectsHeader() {
   const projectHeaderRef = useRef<HTMLDivElement | null>(null);
@@ -39,19 +49,43 @@ function ProjectsHeader() {
   });
 
   return (
-    <header
-      className={` flex w-full h-[80vh] flex-col items-center justify-around p-10 z-10 header ${myFont.className}`}
-      ref={projectHeaderRef}
-    >
-      <h1 className="text-9xl header">Our Projects</h1>
-      <h2 className={`text-4xl mb-16 w-2/3 text-center ${secondary.className}`}>
-        Our team of creative professionals is dedicated to providing exceptional
-        services across various industries, ensuring every project is executed
-        with precision and creativity. Whether it’s a high-energy commercial, an
-        elegant wedding film, or a corporate video, we bring your vision to
-        life. Discover our full range of projects.
-      </h2>
-    </header>
+    <>
+      <header
+        className={` flex w-full h-[calc(100vh-96px)] flex-col items-start justify-center p-10 z-10 header mt-16 md:mt-0 ${primary.className}  text-black`}
+        ref={projectHeaderRef}
+      >
+        <h1 className="text-4xl md:text-6xl 2xl:text-7xl text-center md:text-left header mb-6 md:mb-20 w-full">
+          Our Projects
+        </h1>
+        <h2
+          className={`md:text-4xl text-xl mb-6 md:mb-16 w-full text-center md:text-left ${secondary.className}`}
+        >
+          Our team of creative professionals is dedicated to providing
+          exceptional services across various industries, ensuring every project
+          is executed with precision and creativity. Whether it’s a high-energy
+          commercial, an elegant wedding film, or a corporate video, we bring
+          your vision to life. Discover our full range of projects.
+        </h2>
+      </header>
+      <div
+        className={`${secondary.className} flex text-black justify-around w-full h-24 border-y border-black overflow-hidden`}
+      >
+        <ul className="flex w-full justify-around items-center h-full text-xl ">
+          <TextMarquee
+            texts={[
+              "Fashion",
+              "Branding",
+              "Furniture",
+              "Wedding Films",
+              "Architecture",
+              "Product Photography",
+              "Web development",
+              "Social Media Management ",
+            ]}
+          />
+        </ul>
+      </div>
+    </>
   );
 }
 

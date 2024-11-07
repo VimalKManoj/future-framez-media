@@ -4,6 +4,7 @@ import React, { use, useRef, useState } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -29,6 +30,14 @@ function Video() {
   useGSAP(
     () => {
       const ctx = gsap.context(() => {
+        ScrollTrigger.create({
+          trigger: videoContainerRef.current,
+          start: "top top",
+          end: "bottom 70%", // Extended end to allow pinning for longer duration
+          pin: true,
+          scrub: 1,
+        });
+
         const timeline = gsap.timeline({
           scrollTrigger: {
             trigger: videoContainerRef.current,
@@ -39,11 +48,17 @@ function Video() {
         });
 
         // Initial scaling animation
-        timeline.fromTo(
-          ".video-wrapper",
-          { scale: 0.8, yPercent: 20, duration: 1 },
-          { scale: 1.1, yPercent: 0, duration: 1 }
-        );
+        timeline
+          .fromTo(
+            ".video-wrapper",
+            { scale: 0.8, yPercent: 20, duration: 1 },
+            { scale: 1.1, yPercent: 0, duration: 1 }
+          )
+          .to(".video-button", {
+            scale: 1,
+            duration: 1,
+            ease: "power1.inOut",
+          });
 
         gsap.timeline({
           scrollTrigger: {
@@ -62,27 +77,42 @@ function Video() {
   );
 
   return (
-    <div
-      className="video-container relative h-screen  w-full flex justify-center items-center overflow-hidden"
-      ref={videoContainerRef}
-    >
-      <div className="video-wrapper absolute top-0 left-0 w-screen overflow-x-hidden h-screen object-cover z-10 opacity-60 overflow-hidden flex flex-col justify-center items-center">
-        <video
-          ref={videoRef}
-          className={`w-2/3 h-2/3 object-cover hero-video`}
-          autoPlay
-          playsInline
-          controls={isScaled}
-          muted={isMuted} // Reflect the state
-          loop
-          preload="auto"
-          onClick={handleVideoClick}
+    <>
+      <div
+        className="video-container relative h-screen  w-full flex justify-center items-center overflow-hidden"
+        ref={videoContainerRef}
+      >
+        <div
+          className={`video-button scale-0 h-20 w-20 bg-slate-300 rounded-full flex justify-center items-center ${
+            isMuted ? "" : "hidden"
+          }`}
         >
-          <source src="/hero.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+          <Image
+            src="/play.svg"
+            alt="play"
+            width={24}
+            height={24}
+            className="h-12 w-12 object-contain object-center"
+          />
+        </div>
+        <div className="video-wrapper absolute top-0 left-0 w-screen overflow-x-hidden h-screen object-cover z-10 opacity-60 overflow-hidden flex flex-col justify-center items-center">
+          <video
+            ref={videoRef}
+            className={`w-2/3 h-2/3 object-cover hero-video`}
+            autoPlay
+            playsInline
+            controls={isScaled}
+            muted={isMuted} 
+            loop
+            preload="auto"
+            onClick={handleVideoClick}
+          >
+            <source src="/hero.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 

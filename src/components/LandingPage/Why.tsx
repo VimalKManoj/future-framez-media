@@ -1,13 +1,9 @@
 "use client";
 import React, { useRef, useState } from "react";
-import { Bebas_Neue } from "next/font/google";
 import localFont from "next/font/local";
-const myFont = localFont({ src: "./../../app/fonts/Suisse_Intl_Regular.ttf" });
-
-const bebas = Bebas_Neue({
-  subsets: ["latin"],
-  weight: ["400"],
-  display: "swap",
+const primary = localFont({ src: "./../../app/fonts/Legacy_Sans.woff" });
+const secondary = localFont({
+  src: "./../../app/fonts/BlauerNue-Regular.woff",
 });
 
 function Why() {
@@ -19,15 +15,15 @@ function Why() {
   const whyUsRef = useRef<HTMLDivElement | null>(null);
   return (
     <section
-      className="w-screen h-screen  flex justify-center  flex-col items-center z-30 p-10 xl:my-10 2xl:my-20"
+      className="w-screen md:h-screen  flex justify-center  flex-col items-center z-30 p-6 md:p-10 xl:my-10 2xl:my-20"
       ref={whyUsRef}
     >
       <div className="overflow-hidden flex justify-center items-start w-full xl:mt-20 2xl:mt-32">
-        <h1 className={`${bebas.className} text-7xl 2xl:text-7xl why-us `}>
+        <h1 className={`${primary.className} text-3xl md:text-6xl 2xl:text-7xl why-us `}>
           Why Us?
         </h1>
       </div>
-      <div className={`${myFont.className} w-3/6 p-4 pt-10 text-container`}>
+      <div className={`${secondary.className} md:w-3/6 p-4 pt-10 text-container`}>
         <h1 className="text-lg text-justify ">
           We are{" "}
           <span
@@ -105,7 +101,7 @@ function Why() {
         </h1>
       </div>
 
-      <div className={` w-3/6 p-4 pt-4 text-container `}>
+      <div className={`${secondary.className} md:w-3/6 p-4 pt-4 text-container `}>
         <h1
           className={`text-lg text-justify  ${
             visibleSection >= 5

@@ -5,88 +5,12 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 import Image from "next/image";
 import React, { useRef } from "react";
-import { Bebas_Neue, Hanken_Grotesk } from "next/font/google";
-
-const bebas = Bebas_Neue({
-  subsets: ["latin"],
-  weight: ["400"],
-  display: "swap",
+const primary = localFont({ src: "./../../app/fonts/Legacy_Sans.woff" });
+const secondary = localFont({
+  src: "./../../app/fonts/BlauerNue-Regular.woff",
 });
-
-const TeamMembers = [
-  {
-    id: 1,
-    name: "S. Suresh Suryavanshi",
-    role: "Chief Executive Officer",
-    image: "/team/surya.jpg",
-  },
-  {
-    id: 2,
-    name: "Ashwinth Kumar",
-    role: "Head of communications",
-    image: "/team/ashwinth.jpg",
-  },
-  {
-    id: 3,
-    name: "Shreejith Shashi",
-    role: "Head of Production and Creative",
-    image: "/team/sreejith.jpg",
-  },
-  {
-    id: 4,
-    name: "Milan K Manoj",
-    role: "Creative Director",
-    image: "/team/milan.jpg",
-  },
-  {
-    id: 5,
-    name: "Diwakar Chavan",
-    role: "Head of Digital Marketing",
-    image: "/team/divakar.jpg",
-  },
-  {
-    id: 6,
-    name: "Nishita Mariam George",
-    role: "Stylist",
-    image: "/team/nisitha.jpg",
-  },
-  {
-    id: 7,
-    name: "Varun Kaladharan",
-    role: "Cinematographer",
-    image: "/team/varun.jpg",
-  },
-  {
-    id: 8,
-    name: "Sharath Raam",
-    role: "Creative Director",
-    image: "/team/sharath.jpg",
-  },
-  {
-    id: 9,
-    name: "Tanya Bhatnagar",
-    role: "Production Manager",
-    image: "/team/tanya.jpg",
-  },
-  {
-    id: 10,
-    name: "Rahul Kuttappy",
-    role: "Editor",
-    image: "/team/rahul.jpg",
-  },
-  {
-    id: 11,
-    name: "Rohit Baburaj",
-    role: "Photographer",
-    image: "/team/rohith.jpg",
-  },
-  {
-    id: 12,
-    name: "Kavana",
-    role: "Business Developer",
-    image: "/team/kavana.jpg",
-  },
-];
+import localFont from "next/font/local";
+import { TeamMembers } from "@/libs/constants";
 
 function TeamSection() {
   const TeamSectionRef = useRef<HTMLDivElement | null>(null);
@@ -176,7 +100,7 @@ function TeamSection() {
       className="w-full h-full flex flex-col justify-center items-center p-10"
       ref={TeamSectionRef}
     >
-      <h1 className={`${bebas.className} text-7xl 2xl:text-7xl mb-10`}>
+      <h1 className={`${primary.className} md:text-6xl 2xl:text-6xl mb-10`}>
         The Great minds behind our works
       </h1>
       <div className="w-2/3 h-full  team-banner">
@@ -189,7 +113,7 @@ function TeamSection() {
         />
       </div>
 
-      <h1 className={`${bebas.className} text-7xl 2xl:text-7xl mb-10`}>
+      <h1 className={`${primary.className} md:text-6xl 2xl:text-6xl my-10`}>
         Meet our team Members
       </h1>
       {TeamMembers.map((member) => (
@@ -209,10 +133,10 @@ type TeamMemberProps = {
 
 const TeamMemberCard = ({ name, role, image }: TeamMemberProps) => {
   return (
-    <div className="relative w-3/4 h-12 flex justify-between items-center border-b border-black first:border-t team-member-card cursor-pointer">
-      <h1 className={`ml-32 ${bebas.className} text-2xl`}>{name}</h1>
-      <h1 className="mr-32 ">{role}</h1>
-      <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 object-center z-10 w-52 h-64 image-card shadow-xl">
+    <div className="relative w-full md:w-3/4 h-12 flex justify-between items-center border-b border-black first:border-t team-member-card cursor-pointer">
+      <h1 className={`md:ml-32 ${secondary.className} md:text-2xl`}>{name}</h1>
+      <h1 className="md:mr-32 ">{role}</h1>
+      <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 object-center z-10 md:w-44 md:h-56 2xl:w-52 2xl:h-64 image-card shadow-xl">
         <Image
           src={image}
           alt="team-member"
@@ -222,7 +146,7 @@ const TeamMemberCard = ({ name, role, image }: TeamMemberProps) => {
         />
       </div>
       <div className="absolute w-full h-full flex justify-between items-center bg-black z-0  content">
-        <h1 className={`ml-32 ${bebas.className} text-2xl text-white name`}>
+        <h1 className={`ml-32 ${secondary.className} text-2xl text-white name`}>
           {name}
         </h1>
         <h1 className="mr-32   text-white">{role}</h1>

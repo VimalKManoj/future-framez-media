@@ -5,91 +5,115 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 import Image from "next/image";
 import React, { useRef } from "react";
-import { Bebas_Neue, Hanken_Grotesk } from "next/font/google";
-
-import AboutUs from "./AboutUs";
-
-const bebas = Bebas_Neue({
-  subsets: ["latin"],
-  weight: ["400"],
-  display: "swap",
+const primary = localFont({ src: "./../../app/fonts/Legacy_Sans.woff" });
+const secondary = localFont({
+  src: "./../../app/fonts/BlauerNue-Regular.woff",
 });
+import localFont from "next/font/local";
+import AboutUs from "./AboutUs";
 
 function AboutBanner() {
   const AboutBannerRef = useRef<HTMLDivElement | null>(null);
 
   useGSAP(
     () => {
-      const ctx = gsap.context(() => {
-        const timeline = gsap.timeline({
-          scrollTrigger: {
-            trigger: AboutBannerRef.current,
-            start: "top 10%", // Starts at 40% of viewport height
-            end: "bottom bottom", // Ends at 100vh from the start of videoContainerRef
-          },
-        });
+      if (window.matchMedia("(min-width: 640px)").matches) {
+        const ctx = gsap.context(() => {
+          const timeline = gsap.timeline({
+            scrollTrigger: {
+              trigger: AboutBannerRef.current,
+              start: "top 10%", // Starts at 40% of viewport height
+              end: "bottom bottom", // Ends at 100vh from the start of videoContainerRef
+            },
+          });
 
-        timeline
-          .to(".cross", {
-            rotate: 360,
+          timeline
+            .to(".cross", {
+              rotate: 360,
+              duration: 5, // Adjust for speed
+              repeat: -1,
+              ease: "none",
+            })
+            .fromTo(
+              ".about-banner-title",
+              {
+                yPercent: 100,
+              },
+              { yPercent: 0, duration: 1, ease: "power1.inOut" },
+              "<"
+            )
+            .fromTo(
+              ".about-banner-description",
+              {
+                yPercent: 100,
+              },
+              { yPercent: 0, duration: 1, ease: "power1.inOut" },
+              "<"
+            );
+
+          gsap.set(".cross-2", { scale: 1.5 });
+          gsap.to(".cross-2", {
+            rotate: 360 * 2,
             duration: 5, // Adjust for speed
             repeat: -1,
             ease: "none",
-          })
-          .fromTo(
-            ".about-banner-title",
-            {
-              yPercent: 100,
-            },
-            { yPercent: 0, duration: 1, ease: "power1.inOut" },
-            "<"
-          );
-
-        gsap.set(".cross-2", { scale: 2.5 });
-        gsap.to(".cross-2", {
-          rotate: 360,
-          duration: 5, // Adjust for speed
-          repeat: -1,
-          ease: "none",
-        });
-        gsap
-          .timeline({
-            scrollTrigger: {
-              trigger: AboutBannerRef.current,
-              start: "top -10%", // Starts at 40% of viewport height
-              end: "bottom 10%", // Ends at 100vh from the start of videoContainerRef
-              scrub: true,
-            },
-          })
-          .to(".cross", {
-            opacity: 1,
-            scale: 3,
-            y: 800, // Adjust for speed
-          })
-          .to(
-            ".about-bg",
-            {
-              top: 0,
-            },
-            "<"
-          );
-
-        gsap
-          .timeline({
-            scrollTrigger: {
-              trigger: AboutBannerRef.current,
-              start: "top -90%", // Starts at 40% of viewport height
-              end: "bottom 10%", // Ends at 100vh from the start of videoContainerRef
-              scrub: true,
-            },
-          })
-          .to(".cross-2", {
-            scale: 1,
-            y: 1300, // Adjust for speed
           });
-      }, AboutBannerRef);
+          gsap
+            .timeline({
+              scrollTrigger: {
+                trigger: AboutBannerRef.current,
+                start: "top -10%", // Starts at 40% of viewport height
+                end: "bottom 10%", // Ends at 100vh from the start of videoContainerRef
+                scrub: true,
+              },
+            })
+            .to(".cross", {
+              opacity: 1,
+              scale: 3,
+              y: 800, // Adjust for speed
+            })
+            .to(
+              ".about-bg",
+              {
+                top: 0,
+              },
+              "<"
+            )
+            .to(
+              ".about-image-1",
+              {
+                rotate: -8,
+                x: 100,
+              },
+              "<"
+            )
 
-      return () => ctx.revert();
+            .to(
+              ".about-image-3",
+              {
+                rotate: 8,
+                x: -100,
+              },
+              "<"
+            );
+
+          gsap
+            .timeline({
+              scrollTrigger: {
+                trigger: AboutBannerRef.current,
+                start: "top -90%", // Starts at 40% of viewport height
+                end: "bottom 10%", // Ends at 100vh from the start of videoContainerRef
+                scrub: true,
+              },
+            })
+            .to(".cross-2", {
+              scale: 1,
+              y: 1300, // Adjust for speed
+            });
+        }, AboutBannerRef);
+
+        return () => ctx.revert();
+      }
     },
     { scope: AboutBannerRef }
   );
@@ -99,41 +123,44 @@ function AboutBanner() {
       ref={AboutBannerRef}
     >
       <div
-        className="w-20 h-20 bg-white blend cross relative top-32 right-32 scale-125"
+        className="hidden md:block w-16 2xl:w-20 h-16 2xl:h-20 bg-white blend cross relative top-32 right-28 scale-125"
         style={{
           clipPath:
             " polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%)",
         }}
       ></div>
-      <div className="w-full flex  justify-start items-center relative -top-20">
-        <div className="w-3/5">
+      <div className="w-full flex flex-col md:flex-row justify-start items-center relative md:-top-20 mt-10 md:mt-0">
+        <div className="md:w-3/5">
           <div className="overflow-hidden">
             <h1
-              className={`text-8xl 2xl:text-9xl text-white mt-20 ${bebas.className} about-banner-title`}
+              className={`text-4xl md:text-6xl 2xl:text-7xl text-white 2xl:mt-20 ${primary.className} about-banner-title mix-blend-difference`}
             >
               Creativity
             </h1>
           </div>
           <div className="overflow-hidden">
             <h1
-              className={` text-8xl 2xl:text-9xl text-white ${bebas.className} about-banner-title`}
+              className={` text-4xl md:text-6xl 2xl:text-7xl text-white ${primary.className} about-banner-title mix-blend-difference`}
             >
               Unleashed
             </h1>
           </div>
         </div>
-
-        <h1 className="text-base text-white/70 text-start w-2/4 mr-20 z-20 mix-blend-difference">
-          Our journey began with a simple yet powerful idea: to create a space
-          where creativity thrives and brands flourish. With a diverse team of
-          talented designers, writers, marketers, and developers, we have
-          cultivated an environment that encourages out-of-the-box thinking and
-          collaborative problem-solving.
-        </h1>
+        <div className="overflow-hidden  md:w-2/4 md:mr-20 z-20">
+          <h1
+            className={`${secondary.className} text-xl text-white/70  text-center md:text-start mix-blend-difference about-banner-description mt-10 2xl:mt-20`}
+          >
+            Our journey began with a simple yet powerful idea: to create a space
+            where creativity thrives and brands flourish. With a diverse team of
+            talented designers, writers, marketers, and developers, we have
+            cultivated an environment that encourages out-of-the-box thinking
+            and collaborative problem-solving.
+          </h1>
+        </div>
       </div>
-      <div className="relative -top-20 flex justify-around items-center w-full h-[90vh] gap-10 z-30 about-bg">
+      <div className="relative md:-top-10 flex flex-col md:flex-row justify-around items-center w-full md:h-[90vh] gap-10 z-30 about-bg">
         <div
-          className="h-[80%] p-4 w-1/4 overflow-hidden border border-white/20 border-dashed about-images"
+          className=" h-[80%] p-4 md:w-1/4 overflow-hidden border border-white/20 border-dashed  about-image-1"
           style={{ clipPath: "polygon(0 0%, 100% 0%, 100% 100%, 0% 100%)" }}
         >
           <Image
@@ -145,7 +172,7 @@ function AboutBanner() {
           />
         </div>
         <div
-          className="h-full p-4 w-2/4 overflow-hidden border border-white/20 border-dashed about-images"
+          className="h-full  w-full p-4 md:w-2/4 overflow-hidden border border-white/20 border-dashed  about-image-2 z-20 bg-black"
           style={{ clipPath: "polygon(0 0%, 100% 0%, 100% 100%, 0% 100%)" }}
         >
           <Image
@@ -157,7 +184,7 @@ function AboutBanner() {
           />
         </div>
         <div
-          className="h-[80%] p-4 w-1/4 overflow-hidden border border-white/20 border-dashed about-images"
+          className="hidden  md:block h-[80%] p-4 w-1/4 overflow-hidden border border-white/20 border-dashed about-image-3"
           style={{ clipPath: "polygon(0 0%, 100% 0%, 100% 100%, 0% 100%)" }}
         >
           <Image
@@ -169,9 +196,9 @@ function AboutBanner() {
           />
         </div>
       </div>
-      <div className="relative w-full h-[80vh] bg-black overflow-hidden flex justify-center ">
+      <div className="relative w-full h-full mb-10 md:mb-0 md:h-screen 2xl:h-[80vh] bg-black overflow-hidden flex justify-center ">
         <div
-          className="w-20 h-20 bg-white blend cross-2 relative -top-72 right-32 z-30 "
+          className="hidden md:block w-20 h-20 bg-white mix-blend-difference cross-2 relative -top-72 right-32 z-30 "
           style={{
             clipPath:
               " polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%)",
