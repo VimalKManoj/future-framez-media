@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { ReactLenis, useLenis } from "../libs/lenis";
+import { ReactLenis } from "../libs/lenis";
 import LayoutWrapper from "@/components/LayoutWrapper";
 
 export const metadata: Metadata = {

@@ -11,15 +11,8 @@ const secondary = localFont({
 });
 
 gsap.registerPlugin(ScrollTrigger);
-import { Bebas_Neue, Hanken_Grotesk } from "next/font/google";
-import { title } from "process";
-import TextMarquee from "../Marquee/TextMarque";
 
-const bebas = Bebas_Neue({
-  subsets: ["latin"],
-  weight: ["400"],
-  display: "swap",
-});
+import TextMarquee from "../Marquee/TextMarque";
 
 function ProjectsHeader() {
   const projectHeaderRef = useRef<HTMLDivElement | null>(null);

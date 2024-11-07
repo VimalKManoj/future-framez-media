@@ -36,13 +36,13 @@ function SingleProject({
   description1,
   description2,
   bannerImageDesktop,
-  bannerImageMobile,
+  // bannerImageMobile,
   aboutImage1,
   aboutImage2,
   marqueImage,
   btsImages,
-  mobileVideos,
-}: ProjectPageProp) {
+}: // mobileVideos,
+ProjectPageProp) {
   return (
     <div className="relative flex min-h-screen w-screen flex-col items-center justify-center  bg-[#43322C] text-white ">
       <HeaderNav />

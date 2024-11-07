@@ -22,7 +22,7 @@ function TeamSection() {
         ) as HTMLElement[];
 
         TeamMembers.forEach((TeamMembers) => {
-          const TeamTl = gsap.timeline({
+          gsap.timeline({
             defaults: { duration: 0.4, ease: "power1.inOut" },
           });
 

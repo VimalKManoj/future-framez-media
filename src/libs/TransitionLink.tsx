@@ -20,7 +20,7 @@ function TransitionLink({
   ...props
 }: TransitionLinkProps) {
   const router = useRouter();
-  const transitionDivRef = useRef<HTMLDivElement | null>(null);
+  // const transitionDivRef = useRef<HTMLDivElement | null>(null);
   const handleTransition = async (
     e: React.MouseEvent<HTMLAnchorElement, MouseEvent>
   ) => {

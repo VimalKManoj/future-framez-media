@@ -1,6 +1,6 @@
 "use client";
 
-import React, { use, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import ScrollTrigger from "gsap/ScrollTrigger";
@@ -102,7 +102,7 @@ function Video() {
             autoPlay
             playsInline
             controls={isScaled}
-            muted={isMuted} 
+            muted={isMuted}
             loop
             preload="auto"
             onClick={handleVideoClick}

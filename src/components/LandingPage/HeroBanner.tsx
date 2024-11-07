@@ -32,16 +32,14 @@ function HeroBanner() {
             )
             .fromTo(
               ".banner-cap",
-              { opacity: 0 }, // Start with translateY(100%) and invisible
+              { opacity: 0 }, // Start with opacity 0
               {
-                // End at translateY(0)
                 opacity: 1,
-                duration: 1, // Duration for each letter
-                stagger: 0.02, // Stagger each letter animation by 0.05 seconds
-                ease: "power1.out", // Smooth easing
-              }
-            ),
-            "-=.5";
+                duration: 1,
+                ease: "power1.out",
+              },
+              "-=0.5" // Offset this animation to overlap with the previous one
+            );
         }
       }, heroBannerRef);
 

@@ -6,7 +6,7 @@ import { useGSAP } from "@gsap/react";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import Image from "next/image";
 import TransitionLink from "@/libs/TransitionLink";
-const primary = localFont({ src: "./../../app/fonts/Legacy_Sans.woff" });
+// const primary = localFont({ src: "./../../app/fonts/Legacy_Sans.woff" });
 const secondary = localFont({
   src: "./../../app/fonts/BlauerNue-Regular.woff",
 });
