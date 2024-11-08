@@ -108,7 +108,7 @@ function TeamSection() {
           const timeline = gsap.timeline({
             scrollTrigger: {
               trigger: ImageRef.current,
-              start: "15% center", // Starts at 40% of viewport height
+              start: "25% center", // Starts at 40% of viewport height
               end: "bottom center", // Ends at 100vh from the start of videoContainerRef
               scrub: true,
               toggleActions: "play none none reverse",

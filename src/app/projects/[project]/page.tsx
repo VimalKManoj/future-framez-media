@@ -2,6 +2,7 @@ import React from "react";
 import SingleProject from "@/components/SingleProjectPage/SingleProject";
 import { Projects } from "@/libs/constants";
 import Footer from "@/components/LandingPage/Footer";
+import NextProject from "@/components/SingleProjectPage/NextProject";
 
 function Page({ params }: { params: { project: string } }) {
   const project = Projects.find((project) => project.slug === params.project);
@@ -12,7 +13,6 @@ function Page({ params }: { params: { project: string } }) {
 
   return (
     <>
-    
       <SingleProject
         title={project.title}
         caption={project.caption}
@@ -30,6 +30,7 @@ function Page({ params }: { params: { project: string } }) {
         mobileVideos={project.mobileVideos} // Default to an empty array if not provided
         desktopVideos={project.desktopVideos} // Default to an empty array if not provided
       />
+      <NextProject currentProjectSlug={params.project} />
       <Footer />
     </>
   );

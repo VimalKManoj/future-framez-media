@@ -4,6 +4,7 @@ import localFont from "next/font/local";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import TransitionLink from "@/libs/TransitionLink";
 
 // import Image from "next/image";
 // import TransitionLink from "@/libs/TransitionLink";
@@ -71,9 +72,15 @@ function Footer() {
             >
               Get in touch
             </h1>
-            <h1 className="mb-4">info@futureframez.com</h1>
-            <h1>+91 8123 578 889</h1>
-            <h1 className="mb-4">+91 8075 941 342</h1>
+            <a href="mailto:info@futureframez.com">
+              <h1>info@futureframez.com</h1>
+            </a>
+            <a href="tel:+91812578889">
+              <h1>+91 8123 578 889</h1>
+            </a>
+            <a href="tel:+918075941342">
+              <h1>+91 8075 941 342</h1>
+            </a>
           </div>
           <h1
             className={`md:w-2/3 ${secondary.className} w-full md:text-3xl  mt-10 md:mt-0 text-center md:text-left md:ml-28 `}
@@ -85,14 +92,27 @@ function Footer() {
           </h1>
         </div>
         <div className="w-full border-t md:border-y border-white/70 py-4 h-full flex flex-col md:flex-row justify-between items-center z-10 self-end">
-          <div className={`${secondary.className} text-white/70 mb-6 text-center md:text-left`}>
+          <div
+            className={`${secondary.className} text-white/70 mb-6 text-center md:text-left`}
+          >
             <h1 className=" text-2xl mb-2 text-white">Follow Us</h1>
-            <h1>Instagram</h1>
-            <h1>Facebook</h1>
-            <h1>Linkedin</h1>
-            <h1>Behance</h1>
+            <a href="https://www.instagram.com/ffm_studio?igsh=a3p4MGNhZWRrMzli">
+              <h1>Instagram</h1>
+            </a>
+
+            <a href="https://m.facebook.com/FutureFramezMedia">
+              <h1>Facebook</h1>
+            </a>
+            <a href="https://www.linkedin.com/company/future-framez-media?originalSubdomain=in">
+              <h1>Linkedin</h1>
+            </a>
+            <a href="https://www.behance.net/futureframez">
+              <h1>Behance</h1>
+            </a>
           </div>
-          <div className={`${secondary.className} text-white/70 mb-6 text-center md:text-left`}>
+          <div
+            className={`${secondary.className} text-white/70 mb-6 text-center md:text-left`}
+          >
             <h1 className=" text-2xl mb-2 text-white">Sitemap</h1>
             <h1>Home</h1>
             <h1>About</h1>

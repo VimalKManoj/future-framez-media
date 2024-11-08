@@ -234,7 +234,7 @@ function SingleProject({
           desktopVideos.slice(0, 2).map((video, index) => (
             <div
               key={index}
-              className="w-full md:w-full h-[720px] rounded-xl border border-white flex flex-col justify-between pb-2 p-4"
+              className="w-full md:w-full md:h-[720px] rounded-xl border border-white flex flex-col justify-between mt-20 md:mt-0 pb-2 p-4"
             >
               <div className="h-[90%] w-full rounded-t-xl overflow-hidden">
                 <video
