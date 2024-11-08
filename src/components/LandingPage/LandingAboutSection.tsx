@@ -71,7 +71,6 @@ function LandingAboutSection() {
               loading="eager"
             />
           </div>
-         
         </div>
         <div className="sticky top-10 md:top-20 w-full h-screen flex justify-around items-center flex-col mb-72 card-three">
           <div className="h-4/6 md:h-5/6 w-5/6 md:w-2/3 bg-green-200 overflow-hidden">
@@ -83,7 +82,6 @@ function LandingAboutSection() {
               loading="eager"
             />
           </div>
-          
         </div>
         <div className="sticky top-10 md:top-20 w-full h-screen flex justify-around items-center flex-col mb-72 card-four">
           <div className="h-4/6 md:h-5/6 w-5/6 md:w-2/3 bg-green-200 overflow-hidden">
@@ -95,11 +93,10 @@ function LandingAboutSection() {
               loading="eager"
             />
           </div>
-         
         </div>
 
         {/* Sticky Button */}
-        <div className="sticky bottom-10 w-full flex justify-center">
+        <div className="md:hidden sticky bottom-10 w-full flex justify-center">
           <Button
             placeholder="See All Projects"
             className="z-50"
