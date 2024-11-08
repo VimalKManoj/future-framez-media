@@ -8,7 +8,7 @@ export const TeamMembers = [
   {
     id: 2,
     name: "Ashwinth Kumar",
-    role: "Head of communications",
+    role: "Director",
     image: "/team/ashwinth.jpg",
   },
   {
@@ -16,6 +16,12 @@ export const TeamMembers = [
     name: "Shreejith Shashi",
     role: "Head of Production and Creative",
     image: "/team/sreejith.jpg",
+  },
+  {
+    id: 14,
+    name: "Keran Raj",
+    role: "Production Head",
+    image: "/team/keran.jpg",
   },
   {
     id: 4,

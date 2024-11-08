@@ -204,7 +204,7 @@ const TeamMemberCard = ({ name, role, image }: TeamMemberProps) => {
         >
           {name}
         </h1>
-        <h1 className="md:ml-32   text-white">{role}</h1>
+        <h1 className="md:mr-32   text-white">{role}</h1>
       </div>
     </div>
   );
