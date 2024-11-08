@@ -197,7 +197,7 @@ function ProjectCard() {
           <div className="w-full h-screen  absolute top-0 z-10 project-cards six flex flex-col items-center justify-center">
             <ProjectCardItem
               name={"Urban Ladder"}
-              src={"/projects/urban_ladder/banner_1.jpg"}
+              src={"/projects/urban_ladder/Banner_1.jpg"}
               category="Collection Videos"
               services="Product Videos / Social Media contents"
               classNameCategory="text-white/70 "

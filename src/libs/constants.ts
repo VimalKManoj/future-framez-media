@@ -86,7 +86,7 @@ export const Projects = [
       " As the first team to work with Umber, we captured the brand’s philosophy through product launch visuals, creating photos and videos that highlight their blend of traditional craftsmanship and modern design.",
     description2:
       "Each frame embodies Umber’s commitment to blending Indian elegance with everyday functionality.We stood committed to delivering content that resonated emotionally and culturally, by bringing their stories to life .",
-    bannerImageDesktop: "/projects/Umber/Umber_banner 2.jpg",
+    bannerImageDesktop: "/projects/Umber/Umber_Banner 2.jpg",
     bannerImageMobile: "/projects/Umber_1.jpg",
     aboutImage1: "/projects/Umber/1.jpg",
     aboutImage2: "/projects/Umber/3.jpg",
@@ -126,12 +126,12 @@ export const Projects = [
     aboutImage2: "/projects/11grams/2.png",
     mobileVideos: ["/projects/11grams/1.mp4", "/projects/11grams/2.mp4"],
     marqueeImage: [
-      "/projects/11grams/marque_1.jpg",
-      "/projects/11grams/marque_2.jpg",
-      "/projects/11grams/marque_3.jpg",
-      "/projects/11grams/marque_4.jpg",
-      "/projects/11grams/marque_5.jpg",
-      "/projects/11grams/marque_6.jpg",
+      "/projects/11grams/11 Grams_Scrolling 1.jpg",
+      "/projects/11grams/11 Grams_Scrolling 2.jpg",
+      "/projects/11grams/11 Grams_Scrolling 3.jpg",
+      "/projects/11grams/11 Grams_Scrolling 4.jpg",
+      "/projects/11grams/11 Grams_Scrolling 5.jpg",
+      "/projects/11grams/11 Grams_Scrolling 6.jpg",
     ],
     btsImages: [
       "/projects/11grams/bts/11.jpg",
@@ -272,7 +272,7 @@ export const Projects = [
       "Faced with the challenge of showcasing intricate craftsmanship, we seamlessly blended artistic direction with functionality, enhancing the brand's appeal in modern home decor.",
     description2:
       "Our flexible approach across all social media platforms ensured a successful advertising campaign, meeting client expectations flawlessly.",
-    bannerImageDesktop: "/projects/urban_ladder/banner_2.jpg",
+    bannerImageDesktop: "/projects/urban_ladder/Banner_2.jpg",
     bannerImageMobile: "/projects/urban_ladder/Urban.jpg",
     aboutImage1: "/projects/urban_ladder/1.jpg",
     aboutImage2: "/projects/urban_ladder/2.jpg",

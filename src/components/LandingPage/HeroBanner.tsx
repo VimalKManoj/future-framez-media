@@ -80,7 +80,7 @@ function HeroBanner() {
       >
         <div className="overflow-hidden">
           <h1 className="w-full banner-cap">
-            Future Frames is your one-stop solution{" "}
+            Future Framez is your one-stop solution{" "}
             <br className="hidden md:block" /> for all visual storytelling
             needs.
           </h1>
