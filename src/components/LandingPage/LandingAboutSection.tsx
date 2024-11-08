@@ -48,61 +48,66 @@ function LandingAboutSection() {
       ref={AboutSectionRef}
     >
       {/* Parent div -total height */}
-      <div className="relative h-[500vh] w-full md:w-1/2  flex flex-col items-center justify-between">
+      <div className="relative h-[500vh] w-full md:w-1/2 flex flex-col items-center justify-between">
         {/* Sticky Sections */}
         <div className="sticky top-10 md:top-20 w-full h-screen flex justify-around items-center flex-col mb-72 card-one">
           <div className="h-4/6 md:h-5/6 w-5/6 md:w-2/3 bg-green-200 overflow-hidden">
             <Image
               src={image1}
               alt="bg"
-              className="h-full object-cover w-full "
+              className="h-full object-cover w-full"
               priority={true}
               loading="eager"
             />
           </div>
-          <Button
-            placeholder={"See All Projects"}
-            className="mt-20 md:hidden"
-            href="/projects"
-          />
         </div>
-        <div className="sticky  top-10 md:top-20 w-full h-screen flex justify-around items-center flex-col  mb-72 card-two">
+        <div className="sticky top-10 md:top-20 w-full h-screen flex justify-around items-center flex-col mb-72 card-two">
           <div className="h-4/6 md:h-5/6 w-5/6 md:w-2/3 bg-green-200 overflow-hidden">
             <Image
               src={image4}
               alt="bg"
-              className="h-full object-cover w-full "
+              className="h-full object-cover w-full"
               priority={true}
               loading="eager"
             />
           </div>
-          <div className="h-36 w-full md:hidden"></div>
+         
         </div>
-        <div className="sticky  top-10 md:top-20  w-full h-screen flex justify-around items-center flex-col  mb-72 card-three">
+        <div className="sticky top-10 md:top-20 w-full h-screen flex justify-around items-center flex-col mb-72 card-three">
           <div className="h-4/6 md:h-5/6 w-5/6 md:w-2/3 bg-green-200 overflow-hidden">
             <Image
               src={image3}
               alt="bg"
-              className="h-full  object-cover w-full "
+              className="h-full object-cover w-full"
               priority={true}
               loading="eager"
             />
           </div>
-          <div className="h-24 w-full md:hidden"></div>
+          
         </div>
-        <div className="sticky top-10 md:top-20 w-full h-screen flex justify-around items-center flex-col  mb-72 card-four">
+        <div className="sticky top-10 md:top-20 w-full h-screen flex justify-around items-center flex-col mb-72 card-four">
           <div className="h-4/6 md:h-5/6 w-5/6 md:w-2/3 bg-green-200 overflow-hidden">
             <Image
               src={image2}
               alt="bg"
-              className="h-full object-cover w-full "
+              className="h-full object-cover w-full"
               priority={true}
               loading="eager"
             />
           </div>
-          <div className="h-10 w-full md:hidden"></div>
+         
+        </div>
+
+        {/* Sticky Button */}
+        <div className="sticky bottom-10 w-full flex justify-center">
+          <Button
+            placeholder="See All Projects"
+            className="z-50"
+            href="/projects"
+          />
         </div>
       </div>
+
       <div className="hidden md:flex relative h-[450vh] w-1/2  flex-col items-center justify-between">
         {" "}
         <div className="sticky top-20 w-full  h-screen flex justify-center items-start flex-col ">
