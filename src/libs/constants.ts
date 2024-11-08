@@ -19,7 +19,7 @@ export const TeamMembers = [
   },
   {
     id: 14,
-    name: "Keran Raj",
+    name: "Keran Nair",
     role: "Production Head",
     image: "/team/keran.jpg",
   },
