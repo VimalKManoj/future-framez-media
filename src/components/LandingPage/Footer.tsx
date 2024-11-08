@@ -4,7 +4,6 @@ import localFont from "next/font/local";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import TransitionLink from "@/libs/TransitionLink";
 
 // import Image from "next/image";
 // import TransitionLink from "@/libs/TransitionLink";
