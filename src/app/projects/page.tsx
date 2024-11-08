@@ -5,8 +5,7 @@ import ProjectCard from "@/components/ProjectPage/ProjectCard";
 import ProjectWrapper from "@/components/ProjectPage/ProjectWrapper";
 import HeaderNav from "@/components/HeaderNav";
 import ProjectCardMobile from "@/components/ProjectPage/ProjectCardMobile";
-
-
+import MobileNavBar from "@/components/MobileHeader";
 
 function Page() {
   return (
@@ -14,6 +13,7 @@ function Page() {
       <div className="fixed -top-96 left-0  h-[1380px] w-[560px] bg-hero-gradient z-0 -rotate-45 opacity-85"></div>
       <NoiseEffect />
       <HeaderNav />
+      <MobileNavBar />
       <ProjectsHeader />
       <ProjectCardMobile />
       <ProjectCard />
@@ -22,8 +22,6 @@ function Page() {
 }
 
 export default Page;
-
-
 
 // import React, { useState, useEffect } from "react";
 // import dynamic from "next/dynamic";
@@ -59,4 +57,3 @@ export default Page;
 // }
 
 // export default Page;
-

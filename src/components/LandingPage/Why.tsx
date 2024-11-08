@@ -15,16 +15,18 @@ function Why() {
   const whyUsRef = useRef<HTMLDivElement | null>(null);
   return (
     <section
-      className="w-screen md:h-screen  flex justify-center  flex-col items-center z-30 p-6 md:p-10 xl:my-10 2xl:my-20"
+      className="w-screen h-screen  flex justify-center  flex-col items-center z-30 p-6 md:p-10 xl:my-10 2xl:my-20"
       ref={whyUsRef}
     >
-      <div className="overflow-hidden flex justify-center items-start w-full xl:mt-20 2xl:mt-32">
-        <h1 className={`${primary.className} text-3xl md:text-6xl 2xl:text-7xl why-us `}>
+      <div className="overflow-hidden flex justify-center items-start w-full mb-6 md:mt-32">
+        <h1
+          className={`${primary.className} text-4xl md:text-6xl 2xl:text-7xl why-us `}
+        >
           Why Us?
         </h1>
       </div>
-      <div className={`${secondary.className} md:w-3/6 p-4 pt-10 text-container`}>
-        <h1 className="text-lg text-justify ">
+      <div className={`${secondary.className} md:w-4/6 p-4 text-xl md:text-4xl  text-container`}>
+        <h1 className="text-xl md:text-4xl text-center ">
           We are{" "}
           <span
             className={` border rounded-md cursor-pointer hover:bg-white hover:text-black transition-all px-1 ${
@@ -38,154 +40,64 @@ function Why() {
 
         <h1
           style={{ lineHeight: "1.5" }}
-          className={`text-lg text-justify mt-4 ${
+          className={`text-xl md:text-4xl text-center mt-4 ${
             visibleSection >= 1
               ? "blur-none"
               : "blur-sm select-none transition-all duration-500"
           }`}
         >
-          We partner with brands to help them define or reinvent their{" "}
+          We shape your
           <span
             className={`mx-2 border rounded-md cursor-pointer hover:bg-white hover:text-black transition-all px-1 ${
               visibleSection >= 2 ? "bg-white text-black" : ""
             }`}
             onClick={visibleSection >= 1 ? () => handleVisible(2) : undefined}
           >
-            Identity,
+            brand’s
           </span>
           <span
-            className={`text-lg text-justify mt-2 leading-relaxed ${
+            className={`text-xl md:text-4xl text-justify mt-2 leading-relaxed ${
               visibleSection >= 2
                 ? "blur-none"
                 : "blur-sm select-none transition-all duration-500"
             }`}
           >
-            propelling them toward their highest ambitions. By weaving a brand’s{" "}
+            essence into a compelling
             <span
               className={`mx-2 border rounded-md cursor-pointer hover:bg-white hover:text-black transition-all px-1 ${
                 visibleSection >= 3 ? "bg-white text-black" : ""
               }`}
               onClick={visibleSection >= 2 ? () => handleVisible(3) : undefined}
             >
-              Character
+              visual story
             </span>{" "}
-            into every visual element, we create a narrative that’s uniquely
-            yours—a powerful story that resonates. This story leaves a lasting{" "}
+            that resonates with your
             <span
               className={`mx-2 border rounded-md cursor-pointer hover:bg-white hover:text-black transition-all px-1 ${
                 visibleSection >= 4 ? "bg-white text-black" : ""
               }`}
               onClick={visibleSection >= 3 ? () => handleVisible(4) : undefined}
             >
-              Impression,
+              audience,
             </span>{" "}
           </span>
           <span
-            className={`text-lg text-justify mt-2 leading-relaxed ${
+            className={` text-xl md:text-4xl text-justify mt-2 leading-relaxed ${
               visibleSection >= 4
                 ? "blur-none"
                 : "blur-sm select-none transition-all duration-500"
             }`}
           >
-            forming{" "}
+            creating meaningful and authentic experiences.
             <span
               className={`mx-2 border rounded-md cursor-pointer hover:bg-white hover:text-black transition-all px-1 ${
                 visibleSection >= 5 ? "bg-white text-black" : ""
               }`}
               onClick={visibleSection >= 4 ? () => handleVisible(5) : undefined}
             >
-              Authentic
+              Design
             </span>{" "}
-            connections with real impact.
-          </span>
-        </h1>
-      </div>
-
-      <div className={`${secondary.className} md:w-3/6 p-4 pt-4 text-container `}>
-        <h1
-          className={`text-lg text-justify  ${
-            visibleSection >= 5
-              ? "blur-none"
-              : "blur-sm select-none transition-all"
-          } none`}
-        >
-          we partner with brands to help them define or reinvent their
-          <span
-            className={` mx-2 border px-2 rounded-md cursor-pointer  hover:bg-white hover:text-black ${
-              visibleSection >= 6 ? "bg-white text-black transition-all" : ""
-            }`}
-            onClick={visibleSection >= 5 ? () => handleVisible(6) : undefined}
-          >
-            Identity,
-          </span>
-          <span
-            className={`text-lg text-justify mt-2  ${
-              visibleSection >= 6
-                ? "blur-none"
-                : "blur-sm select-none transition-all"
-            } none`}
-          >
-            propelling them toward their highest ambitions. By weaving a brand’s{" "}
-            <span
-              className={` mx-2  border px-2 rounded-md cursor-pointer  hover:bg-white hover:text-black ${
-                visibleSection >= 7 ? "bg-white text-black transition-all" : ""
-              }`}
-              onClick={visibleSection >= 6 ? () => handleVisible(7) : undefined}
-            >
-              Character
-            </span>{" "}
-            <span
-              className={`text-lg text-justify mt-2  ${
-                visibleSection >= 7
-                  ? "blur-none"
-                  : "blur-sm select-none transition-all"
-              } none`}
-            >
-              into every visual element, we create a narrative that’s uniquely
-              yours—a powerful story that resonates.This story leaves a lasting{" "}
-              <span
-                className={` mx-2  border px-2 rounded-md cursor-pointer  hover:bg-white hover:text-black ${
-                  visibleSection >= 8
-                    ? "bg-white text-black transition-all"
-                    : ""
-                }`}
-                onClick={
-                  visibleSection >= 7 ? () => handleVisible(8) : undefined
-                }
-              >
-                Impression,
-              </span>{" "}
-            </span>{" "}
-            <span
-              className={`text-lg text-justify mt-2  ${
-                visibleSection >= 8
-                  ? "blur-none"
-                  : "blur-sm select-none transition-all"
-              } none`}
-            >
-              forming{" "}
-              <span
-                className={` mx-2 border px-2 rounded-md cursor-pointer  hover:bg-white hover:text-black ${
-                  visibleSection >= 9
-                    ? "bg-white text-black transition-all"
-                    : ""
-                }`}
-                onClick={
-                  visibleSection >= 8 ? () => handleVisible(9) : undefined
-                }
-              >
-                Authentic
-              </span>{" "}
-            </span>
-            <span
-              className={`text-lg text-justify mt-2  ${
-                visibleSection >= 9
-                  ? "blur-none"
-                  : "blur-sm select-none transition-all"
-              } none`}
-            >
-              connections with real impact.
-            </span>
+            — with purpose.
           </span>
         </h1>
       </div>

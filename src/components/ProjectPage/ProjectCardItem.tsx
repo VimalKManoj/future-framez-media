@@ -15,11 +15,13 @@ type ProjectCardItemProps = {
   category: string;
   services: string;
   className?: string;
+  classNameCategory?: string;
   slug: string;
 };
 
 function ProjectCardItem({
   className,
+  classNameCategory,
   name,
   src,
   category,
@@ -38,20 +40,28 @@ function ProjectCardItem({
       <h1 className={`${primary.className} mt-24 z-10`}>{name}</h1>
       <div className="flex w-full h-1/2 items-center justify-between pb-60 z-10">
         <h1
-          className={`${primary.className} text-5xl 2xl:text-7xl text-black/20 uppercase`}
+          className={cn(
+            `${secondary.className} text-5xl 2xl:text-7xl opacity-70 w-1/3`,
+            classNameCategory
+          )}
         >
           {category}
         </h1>
         <div
-          className={`flex items-start justify-between flex-col ${secondary.className}`}
+          className={`flex items-end text-right justify-between flex-col w-1/3 ${secondary.className}`}
         >
           <h1 className="text-xl">{services}</h1>
-          <TransitionLink
-            href={`/projects/${slug}`}
-            className={`${secondary.className} text-sm font-bold px-7 py-6 border border-black rounded-3xl mt-10 uppercase`}
-          >
-            See The Project
-          </TransitionLink>
+          <div className="relative mt-10 ">
+            <TransitionLink
+              href={`/projects/${slug}`}
+              className={cn(
+                `${secondary.className} text-lg  px-7 py-4 border  rounded-3xl hover:bg-black hover:text-white trasition-all duration-300`,
+                className
+              )}
+            >
+              See The Project
+            </TransitionLink>
+          </div>
         </div>
       </div>
       <div className="absolute top-0 w-full h-full project-image-card z-0">

@@ -1,8 +1,8 @@
 "use client";
 import Image from "next/image";
 import React, { useRef } from "react";
-import image1 from "../../../public/1.jpg";
-import image2 from "../../../public/3.jpg";
+import image1 from "../../../public/projects/11grams/project_1.png";
+import image2 from "../../../public/projects/Forest.jpg";
 import image3 from "../../../public/4.jpg";
 import image4 from "../../../public/5.jpg";
 import gsap from "gsap";
@@ -56,6 +56,8 @@ function LandingAboutSection() {
               src={image1}
               alt="bg"
               className="h-full object-cover w-full "
+              priority={true}
+              loading="eager"
             />
           </div>
           <Button
@@ -67,9 +69,11 @@ function LandingAboutSection() {
         <div className="sticky  top-10 md:top-20 w-full h-screen flex justify-around items-center flex-col  mb-72 card-two">
           <div className="h-4/6 md:h-5/6 w-5/6 md:w-2/3 bg-green-200 overflow-hidden">
             <Image
-              src={image2}
+              src={image4}
               alt="bg"
               className="h-full object-cover w-full "
+              priority={true}
+              loading="eager"
             />
           </div>
           <div className="h-36 w-full md:hidden"></div>
@@ -80,6 +84,8 @@ function LandingAboutSection() {
               src={image3}
               alt="bg"
               className="h-full  object-cover w-full "
+              priority={true}
+              loading="eager"
             />
           </div>
           <div className="h-24 w-full md:hidden"></div>
@@ -87,9 +93,11 @@ function LandingAboutSection() {
         <div className="sticky top-10 md:top-20 w-full h-screen flex justify-around items-center flex-col  mb-72 card-four">
           <div className="h-4/6 md:h-5/6 w-5/6 md:w-2/3 bg-green-200 overflow-hidden">
             <Image
-              src={image4}
+              src={image2}
               alt="bg"
               className="h-full object-cover w-full "
+              priority={true}
+              loading="eager"
             />
           </div>
           <div className="h-10 w-full md:hidden"></div>

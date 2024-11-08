@@ -1,39 +1,99 @@
+import TransitionLink from "@/libs/TransitionLink";
+import localFont from "next/font/local";
 import Image from "next/image";
 import React from "react";
+import ProjectCardItemMobile from "./ProjectCardItemMobile";
+const primary = localFont({ src: "./../../app/fonts/Legacy_Sans.woff" });
+const secondary = localFont({
+  src: "./../../app/fonts/BlauerNue-Regular.woff",
+});
 
 function ProjectCardMobile() {
   return (
     <div className="md:hidden flex w-screen h-full justify-between items-center">
       {/* Parent div -total height */}
-      <div className="relative h-[500vh] w-full  flex flex-col items-center justify-between">
+      <div className="relative h-[700vh] w-full  flex flex-col items-center justify-between">
         {/* Sticky Sections */}
-        <div className="sticky top-0 w-full h-screen flex justify-between items-center flex-col bg-green-200 p-4">
-          <div className="w-full h-1/2">
-            <Image
-              src="/projects/11grams_1.jpg"
-              alt="project card"
-              width={500}
-              height={500}
-              className="h-full w-full object-cover"
-            />
-          </div>
-          <div className="w-full h-1/2 flex flex-col justify-around items-center">
-            <h1 className="text-2xl font-bold">11grams</h1>
-            <p className="text-sm text-center"></p>
-            <button className="bg-black text-white px-4 py-2 rounded-lg">
-              SEE THE PROJECT
-            </button>
-          </div>
-          <div></div>
-        </div>
-        <div className="sticky  top-0  w-full h-screen flex justify-around items-center flex-col bg-red-200 ">
-          Bai
-        </div>
-        <div className="sticky  top-0   w-full h-screen flex justify-around items-center flex-col bg-blue-200  ">
-          Kooi
-        </div>
-        <div className="sticky top-0  w-full h-screen flex justify-around items-center flex-col bg-yellow-200 "></div>
-        <div className="sticky top-0  w-full h-screen flex justify-around items-center flex-col bg-yellow-200 "></div>
+        <ProjectCardItemMobile
+          imageUrl="/projects/High_fashion_1.jpg"
+          title="Fashion"
+          subtitle="Fashion Photography"
+          services={["Campaign", "Advertisement", "Editorial", "Catalogue"]}
+          link="/projects/fashion"
+          primaryClassName={primary.className}
+          secondaryClassName={secondary.className}
+          className="bg-[#4E4E4E] text-white"
+        />
+        <ProjectCardItemMobile
+          imageUrl="/projects/11grams_1.jpg"
+          title="11grams"
+          subtitle="Product Photography"
+          services={["Photography", "Videography"]}
+          link="/projects/11grams"
+          primaryClassName={primary.className}
+          secondaryClassName={secondary.className}
+          className="bg-[#254f30]"
+        />{" "}
+        <ProjectCardItemMobile
+          imageUrl="/projects/Umber_1.jpg"
+          title="Umber"
+          subtitle="Furniture Photography"
+          services={["Catalogue", "Editorial", "Product Videos"]}
+          link="/projects/umber"
+          primaryClassName={primary.className}
+          secondaryClassName={secondary.className}
+          className="bg-[#43322C]"
+        />{" "}
+        <ProjectCardItemMobile
+          imageUrl="/projects/Calender_1.jpg"
+          title="Forest Touch Calendar"
+          subtitle="Artistry Amidst Adversity"
+          services={["Campaign", "Music Production", "Costume Design"]}
+          link="/projects/calendar"
+          primaryClassName={primary.className}
+          className="bg-gray-700 text"
+          secondaryClassName={secondary.className}
+        />{" "}
+        <ProjectCardItemMobile
+          title={"Forest Touch"}
+          imageUrl="/projects/Forest_touch_1.jpg"
+          subtitle="The essence of Nature’s finest"
+          services={[
+            "Branding",
+            "Social Media Management",
+            "Website Development",
+            "Marketing Strategy",
+          ]}
+          link="/projects/forest-touch"
+          primaryClassName={primary.className}
+          secondaryClassName={secondary.className}
+          className="bg-[#43322C]"
+        />
+        <ProjectCardItemMobile
+          title={"Urban Ladder"}
+          imageUrl="/projects/urban_ladder/2.jpg"
+          subtitle="Design Meets Storytelling"
+          services={["Product Photography", "Videography"]}
+          link="/projects/urban-ladder"
+          primaryClassName={primary.className}
+          secondaryClassName={secondary.className}
+          className="bg-[#91756b]"
+        />
+        <ProjectCardItemMobile
+          title={"Art Legends"}
+          imageUrl="/projects/art_legends/2.jpg"
+          subtitle="Spaces Transformed into Art"
+          services={[
+            "Product Photography",
+            "Catalogue",
+            "Editorial",
+            "Lifestyle",
+          ]}
+          link="/projects/art-legends"
+          primaryClassName={primary.className}
+          secondaryClassName={secondary.className}
+          className="bg-[#a58b81]"
+        />
       </div>
     </div>
   );

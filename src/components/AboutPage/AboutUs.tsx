@@ -17,19 +17,19 @@ function AboutUs() {
       <div
         className={`md:w-2/5 text-white/70  ${secondary.className} text-xl text-center md:text-left`}
       >
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores
-        quidem obcaecati provident aspernatur ratione. Possimus ab explicabo
-        similique recusandae dignissimos, quas laborum, incidunt commodi tenetur
-        eius maiores neque exercitationem accusantium? lorem ipsum dolor sit
-        amet consectetur adipisicing elit. Asperiores quidem obcaecati provident
-        aspernatur ratione.
+        At FFM Studio, we believe in the power of authentic storytelling. We’re
+        a creative team passionate about transforming ideas into impactful
+        visual experiences that connect with audiences on a deeper level. Every
+        brand has a unique character, and it’s our mission to bring that
+        character to life through thoughtful design and purposeful storytelling.
         <br />
         <br />
-        dignissimos, quas laborum, incidunt commodi tenetur eius maiores neque
-        exercitationem accusantium? lorem ipsum dolor sit amet consectetur
-        adipisicing elit. Asperiores quidem obcaecati provident aspernatur
-        ratione. Possimus ab explicabo similique recusandae dignissimos, quas
-        laborum, incidunt commodi tenetur eius maiores neque exercitationem
+        Our approach is simple yet powerful: we don’t just create content—we
+        craft narratives. From concept to final execution, we blend strategy,
+        creativity, and attention to detail, ensuring that every project
+        reflects the brand’s true essence. Our team’s expertise spans design,
+        video production, brand strategy, and digital experiences, giving us the
+        versatility to elevate any vision.
       </div>
     </div>
   );

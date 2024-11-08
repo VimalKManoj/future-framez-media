@@ -65,6 +65,8 @@ function WhyAndService() {
           height={1000}
           alt="bg"
           className=" w-full h-full object-cover relative bottom-60 z-0 parallax-img hidden md:block"
+          priority={true}
+          loading="eager"
         />
       </div>
 

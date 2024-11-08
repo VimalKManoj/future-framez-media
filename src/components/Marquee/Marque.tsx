@@ -1,12 +1,14 @@
 import React, { CSSProperties } from "react";
 import Image from "next/image";
 import "./styles.css";
+import { cn } from "@/libs/util";
 
 interface MarqueeProps {
   images: string[];
+  className?: string;
 }
 
-const Marquee: React.FC<MarqueeProps> = ({ images }) => {
+const Marquee: React.FC<MarqueeProps> = ({ images, className }) => {
   return (
     <div
       className="marquee fadeout-horizontal"
@@ -24,7 +26,7 @@ const Marquee: React.FC<MarqueeProps> = ({ images }) => {
               alt=""
               width={1500}
               height={1500}
-              className=" w-full h-full object-cover z-0"
+              className={cn(`w-full h-full object-cover z-0`, className)}
             />
           </div>
         ))}

@@ -21,8 +21,6 @@ const secondary = localFont({
 
 gsap.registerPlugin(ScrollTrigger);
 
-
-
 function LandingProjectSection() {
   const LandingProjectRef = useRef<HTMLDivElement | null>(null);
   const ProjectButtonRef = useRef<HTMLDivElement | null>(null);
@@ -192,28 +190,27 @@ function LandingProjectSection() {
       <div className="w-full ">
         <div className="w-full overflow-y-hidden">
           <h1 className="text-3xl md:text-6xl 2xl:text-7xl w-full px-10 md:px-20 xl:px-28 text-center md:text-left  md:mb-4 text-1">
-            Bringing Ideas to Life Through
+            Bringing Ideas to Life
           </h1>
         </div>
 
         <div className="w-full h-px bg-white/60 project-line scale-x-0 z-40 rounded-xl " />
         <div className="w-full overflow-hidden flex flex-col md:flex-row justify-center items-center text-black px-8 md:px-20 xl:px-28   md:mb-0">
           <h1
-            className={`text-2xl md:w-2/3 ${secondary.className} order-2 md:order-1 mt-4`}
+            className={`text-2xl md:w-2/3 ${secondary.className} order-2 md:order-1 h-full`}
           >
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa
-            molestias ex iste et quia ab dolores.
+            Passion, Creativity, and Purpose – This is FFM.
           </h1>
           <h1
-            className="text-2 text-3xl md:text-6xl 2xl:text-7xl  w-full text-right mt-4 text-2 md:order-2 pb-10 "
+            className="text-2 text-3xl md:text-6xl 2xl:text-7xl  w-full text-center md:text-right mt-4 text-2 md:order-2 pb-10 "
             ref={ProjectButtonRef}
           >
-            Creative{" "}
+            Discover{" "}
             <TransitionLink
-              href="/projects"
+              href="/about"
               className="relative project-button cursor-pointer "
             >
-              Projects{" "}
+              Our Story
               <span className="project-button-line absolute -bottom-5 left-0 w-full h-px bg-black scale-x-0 origin-left" />
             </TransitionLink>
           </h1>
@@ -228,6 +225,8 @@ function LandingProjectSection() {
             height={1000}
             alt="bg"
             className=" h-full object-contain"
+            priority={true}
+            loading="eager"
           />
           <Image
             src={image2}
@@ -235,6 +234,8 @@ function LandingProjectSection() {
             height={1000}
             alt="bg"
             className=" h-full object-contain"
+            priority={true}
+            loading="eager"
           />
           <Image
             src={image3}
@@ -242,6 +243,8 @@ function LandingProjectSection() {
             height={1000}
             alt="bg"
             className=" h-full object-contain"
+            priority={true}
+            loading="eager"
           />
           <Image
             src={image7}
@@ -249,6 +252,8 @@ function LandingProjectSection() {
             height={1000}
             alt="bg"
             className=" h-full object-contain"
+            priority={true}
+            loading="eager"
           />
           <Image
             src={image5}
@@ -256,6 +261,8 @@ function LandingProjectSection() {
             height={1000}
             alt="bg"
             className=" h-full object-contain"
+            priority={true}
+            loading="eager"
           />
           <Image
             src={image6}
@@ -263,6 +270,8 @@ function LandingProjectSection() {
             height={1000}
             alt="bg"
             className=" h-full object-contain"
+            priority={true}
+            loading="eager"
           />
           <Image
             src={image4}
@@ -270,6 +279,8 @@ function LandingProjectSection() {
             height={1000}
             alt="bg"
             className=" h-full object-contain"
+            priority={true}
+            loading="eager"
           />
         </div>
       </div>
