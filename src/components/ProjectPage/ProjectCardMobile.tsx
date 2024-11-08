@@ -1,6 +1,5 @@
-import TransitionLink from "@/libs/TransitionLink";
 import localFont from "next/font/local";
-import Image from "next/image";
+
 import React from "react";
 import ProjectCardItemMobile from "./ProjectCardItemMobile";
 const primary = localFont({ src: "./../../app/fonts/Legacy_Sans.woff" });
