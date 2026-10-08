@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import React, { useRef } from "react";
-import image1 from "../../../public/projects/11grams/project_1.png";
+import image1 from "../../../public/projects/11grams/project_1.webp";
 import image2 from "../../../public/projects/Forest.jpg";
 import image3 from "../../../public/4.jpg";
 import image4 from "../../../public/5.jpg";

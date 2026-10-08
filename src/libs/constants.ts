@@ -102,7 +102,7 @@ export const Projects = [
       "/projects/Umber/marque_3.jpg",
       "/projects/Umber/marque_4.jpg",
       "/projects/Umber/marque_5.jpg",
-      "/projects/Umber/marque_6.png",
+      "/projects/Umber/marque_6.webp",
     ],
     btsImages: [
       "/projects/Umber/bts/01.jpg",
@@ -126,10 +126,10 @@ export const Projects = [
       "From capturing the essence of their vibrant coffee culture , diverse menu and the rarest coffee beans in Bangalore through our frames , we created content that resonated with customers by aligning with their brand palette.",
     description2:
       " Our work extended to influencer marketing and the cafe’s inauguration, establishing a memorable brand presence.",
-    bannerImageDesktop: "/projects/11grams/11gram_banner.png",
+    bannerImageDesktop: "/projects/11grams/11gram_banner.webp",
     bannerImageMobile: "/projects/11grams/11 Grams_Banner vertical.jpg",
-    aboutImage1: "/projects/11grams/1.png",
-    aboutImage2: "/projects/11grams/2.png",
+    aboutImage1: "/projects/11grams/1.webp",
+    aboutImage2: "/projects/11grams/2.webp",
     mobileVideos: ["/projects/11grams/1.mp4", "/projects/11grams/2.mp4"],
     marqueeImage: [
       "/projects/11grams/11 Grams_Scrolling 1.jpg",
@@ -174,8 +174,8 @@ export const Projects = [
       "We create impactful fashion imagery—ads, campaigns, editorial, and lifestyle content—that captures your brand’s unique style and vision.",
     bannerImageDesktop: "/projects/fashion/fashion_banner.jpg",
     bannerImageMobile: "/hero-banner-4.jpg",
-    aboutImage1: "/projects/fashion/1.jpg",
-    aboutImage2: "/projects/fashion/2.png",
+    aboutImage1: "/projects/fashion/1.webp",
+    aboutImage2: "/projects/fashion/2.webp",
     desktopVideos: [
       "/projects/fashion/Fashion_1.mp4",
       "/projects/fashion/Fashion_2.mp4",
@@ -183,12 +183,12 @@ export const Projects = [
       "/projects/fashion/Fashion_4.mp4",
     ],
     marqueeImage: [
-      "/projects/fashion/marque_1.png",
-      "/projects/fashion/marque_2.png",
-      "/projects/fashion/marque_3.png",
-      "/projects/fashion/marque_4.png",
-      "/projects/fashion/marque_5.png",
-      "/projects/fashion/marque_6.png",
+      "/projects/fashion/marque_1.webp",
+      "/projects/fashion/marque_2.webp",
+      "/projects/fashion/marque_3.webp",
+      "/projects/fashion/marque_4.webp",
+      "/projects/fashion/marque_5.webp",
+      "/projects/fashion/marque_6.webp",
     ],
     btsImages: [
       "/projects/fashion/bts/01.jpg",
